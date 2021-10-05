@@ -5,9 +5,11 @@ package org.example.steps;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Pending;
 import org.example.app.Calculator;
 
 public class MathsStepDefinitions {
@@ -38,4 +40,10 @@ public class MathsStepDefinitions {
         assertThat(total).isEqualTo(expectedTotal);
     }
 
+    @When("I substract a to b")
+    @Pending
+    public void iSubstractAAndB() {
+       //total = calculator.substract(a,b);
+        throw new PendingException();
+    }
 }
